@@ -768,6 +768,33 @@
       to   { transform: scale(1); opacity: 1; }
     }
 
+    /* FOUNDER SECTION */
+    #founder { background: var(--bg-white); padding: 100px 80px; overflow: hidden; }
+    .founder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; margin-top: 56px; }
+    .founder-photo-wrap { position: relative; }
+    .founder-photo-bg { position: absolute; inset: 0; background: linear-gradient(135deg, var(--lime) 0%, rgba(217,255,63,0.3) 100%); border-radius: 28px; transform: rotate(3deg) scale(1.03); }
+    .founder-photo { position: relative; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top center; border-radius: 24px; box-shadow: 0 24px 64px rgba(10,51,38,.18); display: block; }
+    .founder-badge-wrap { position: absolute; bottom: -20px; right: -20px; background: var(--green-dark); border-radius: 20px; padding: 16px 20px; display: flex; align-items: center; gap: 12px; box-shadow: 0 8px 28px rgba(10,51,38,.3); }
+    .founder-badge-icon { width: 44px; height: 44px; background: var(--lime); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    .founder-badge-text { display: flex; flex-direction: column; gap: 2px; }
+    .founder-badge-name { font-size: 13px; font-weight: 700; color: white; white-space: nowrap; }
+    .founder-badge-title { font-size: 11px; color: rgba(255,255,255,.55); white-space: nowrap; }
+    .founder-info { display: flex; flex-direction: column; gap: 28px; }
+    .founder-name { font-size: clamp(28px, 3vw, 42px); font-weight: 700; letter-spacing: -0.03em; color: var(--green-dark); line-height: 1.05; }
+    .founder-credential { display: inline-flex; align-items: center; gap: 8px; background: rgba(10,51,38,.06); border-radius: var(--r-pill); padding: 6px 16px; font-size: 12px; font-weight: 600; color: var(--green-dark); letter-spacing: 0.04em; text-transform: uppercase; width: fit-content; }
+    .founder-bio { font-size: 15.5px; line-height: 1.75; color: var(--muted-text); }
+    .founder-quote { background: var(--card-surface); border-left: 4px solid var(--lime); border-radius: 0 16px 16px 0; padding: 20px 24px; font-size: 15px; font-style: italic; color: var(--body-text); line-height: 1.65; }
+    .founder-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+    .founder-stat { display: flex; flex-direction: column; gap: 4px; }
+    .founder-stat-num { font-size: 28px; font-weight: 700; color: var(--green-dark); letter-spacing: -0.02em; }
+    .founder-stat-label { font-size: 12px; color: var(--muted-text); font-weight: 500; }
+    @media (max-width: 1024px) {
+      #founder { padding: 72px 32px; }
+      .founder-grid { grid-template-columns: 1fr; gap: 48px; }
+      .founder-photo-wrap { max-width: 420px; margin: 0 auto; }
+      .founder-badge-wrap { right: 0; }
+    }
+
     /* Responsive tweaks for contact */
     @media (max-width: 1024px) {
       #contact { padding: 72px 32px; }
@@ -1222,14 +1249,16 @@
       <div class="testimonial-carousel" aria-live="polite" aria-atomic="true">
         <div class="testimonial-slide active" id="slide-0" role="group" aria-roledescription="slide" aria-label="Testimonial 1 of 3">
           <blockquote class="testimonial-quote">
-            "Servicon helped me get steady laundry customers within my first week. Bookings, payments and communication all happen in one place."
+            "Servicon was born out of a simple frustration — finding trusted local services was unnecessarily hard. We built this platform to change that, one verified provider at a time."
           </blockquote>
           <div class="testimonial-author">
-            <div class="author-avatar" aria-hidden="true">👩🏾</div>
+            <div class="author-avatar" aria-hidden="true" style="background:var(--green-dark);overflow:hidden;padding:0;">
+              <img src="founder-professional.jpg" alt="PharmDr Isaac Osemudiamen Cyprian" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:50%;" />
+            </div>
             <div class="author-badge" aria-hidden="true">✓</div>
             <div>
-              <div class="author-name">Adaeze Okonkwo</div>
-              <div class="author-role">Founder, FreshFold Laundry, Lagos</div>
+              <div class="author-name">PharmDr Isaac Osemudiamen Cyprian</div>
+              <div class="author-role">Founder &amp; CEO, Servicon</div>
             </div>
           </div>
         </div>
@@ -1286,6 +1315,72 @@
       <div class="stat-item">
         <div class="stat-number" id="stat-providers">0</div>
         <div class="stat-label">Verified Providers</div>
+      </div>
+    </div>
+  </section>
+  <!-- ── FOUNDER ──────────────────────────────────────────────────── -->
+  <section id="founder" aria-labelledby="founder-h">
+    <div class="reveal" style="text-align:center">
+      <div class="section-pill" aria-hidden="true">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="5" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+        About
+      </div>
+      <h2 class="section-h2" id="founder-h">Meet the Founder</h2>
+      <p class="section-sub">The vision behind Servicon — connecting communities through trusted, verified local services.</p>
+    </div>
+
+    <div class="founder-grid">
+      <!-- Photo column -->
+      <div class="founder-photo-wrap reveal reveal-d1">
+        <div class="founder-photo-bg" aria-hidden="true"></div>
+        <img
+          src="founder-casual.jpg"
+          alt="PharmDr Isaac Osemudiamen Cyprian — Founder of Servicon"
+          class="founder-photo"
+        />
+        <div class="founder-badge-wrap" aria-hidden="true">
+          <div class="founder-badge-icon">💊</div>
+          <div class="founder-badge-text">
+            <span class="founder-badge-name">PharmDr I. O. Cyprian</span>
+            <span class="founder-badge-title">Founder &amp; CEO, Servicon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info column -->
+      <div class="founder-info reveal reveal-d2">
+        <div>
+          <div class="founder-credential">
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="5" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+            Founder &amp; CEO
+          </div>
+          <h3 class="founder-name" style="margin-top:14px">
+            PharmDr Isaac<br>Osemudiamen Cyprian
+          </h3>
+        </div>
+
+        <p class="founder-bio">
+          PharmDr Isaac Osemudiamen Cyprian is a pharmacy doctor turned tech entrepreneur with a passion for building systems that solve real everyday problems. Growing up in Ekosodin, Benin City, he experienced firsthand the challenge of finding reliable, affordable local services — and set out to fix it.
+        </p>
+
+        <div class="founder-quote">
+          "I built Servicon because I believe every Nigerian deserves access to verified, quality services — right in their neighbourhood. Technology should make trust easier, not harder."
+        </div>
+
+        <div class="founder-stats">
+          <div class="founder-stat">
+            <span class="founder-stat-num">2025</span>
+            <span class="founder-stat-label">Founded</span>
+          </div>
+          <div class="founder-stat">
+            <span class="founder-stat-num">Edo</span>
+            <span class="founder-stat-label">State of Origin</span>
+          </div>
+          <div class="founder-stat">
+            <span class="founder-stat-num">PharmD</span>
+            <span class="founder-stat-label">Qualification</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
